@@ -18,7 +18,7 @@ use global_variables
 
 !  stop
   call preparation_RT
-!  call RT_prop
+  call RT_prop
 !
 !  call write_results
 

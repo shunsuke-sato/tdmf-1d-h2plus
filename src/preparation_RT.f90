@@ -16,6 +16,7 @@ subroutine preparation_RT
 
   allocate(zwfn(0:Nx,0:NR))
   allocate(ztwfn_e(0:Nx), ztwfn_n(0:NR), zhwfn_e(0:Nx), zhwfn_n(0:NR))
+  allocate(dipole_t(0:Nt_iter),norm_t(0:Nt_iter))
 
 ! Initial condition
   zwfn = wfn
