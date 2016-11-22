@@ -4,25 +4,24 @@
 ! https://opensource.org/licenses/mit-license.php   !
 !---------------------------------------------------!
 !-------10--------20--------30--------40--------50--------60--------70--------80--------90
-subroutine zwfn_rho
+subroutine RT_prop
   use global_variables
   implicit none
-  integer :: ix,iy
-  real(dp) :: tmp
+  real(dp) :: dipole_m,norm_m
+  integer :: it
 
-  rho(:)=0d0
+  call dipole(dipole_m, norm_m)
 
-!  do ix = 0,Nx
-!    tmp = 0d0
-!    do iy = 0,Nx
-!      tmp = tmp + wfn(ix,iy)**2
-!    end do
-!    rho(ix) = tmp
-!  end do
+  
 
-  rho(:) = abs(zwfn_e(:))**2
-  rho_n(:) = abs(zwfn_n(:))**2
+  do it = 1,Nt_iter
+    call dt_evolve(it)
+    call dipole(dipole_m, norm_m)
+    dipole_t(it) = dipole_m; norm_t(it) = norm_m
+    write(*,"(A,2x,I4,2e16.6e3)")"it=",it,dipole_m,norm_m
+  end do
 
+  call write_td_results
 
   return
-end subroutine zwfn_rho
+end subroutine RT_prop

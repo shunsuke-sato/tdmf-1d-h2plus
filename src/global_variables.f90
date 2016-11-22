@@ -35,10 +35,15 @@ module global_variables
   integer :: Nt_iter
   real(dp) :: T_calc,dt,kick_mom
   complex(zp),allocatable :: zwfn(:,:)
+  complex(zp),allocatable :: zwfn_e(:), zwfn_n(:)
+  real(dp),allocatable :: ztwfn_e(:), ztwfn_n(:), zhwfn_e(:), zhwfn_n(:)
+  real(dp),allocatable :: ztwfn_e_b(:), ztwfn_n_b(:)
   real(dp),allocatable :: dipole_t(:),norm_t(:)
   real(dp) :: field_max,field_duration,field_omega
   real(dp) :: field_max_eV_per_AA,field_duration_fs,field_omega_eV
   real(dp),allocatable :: field_t(:)
+  real(dp),allocatable :: v_e_new(:),v_n_new(:)
+  real(dp),allocatable :: v_e_old(:,:),v_n_old(:,:)
 
 ! temporary
   real(dp),allocatable :: tmp_wfn(:,:),tmp_hwfn(:,:),tmp_wfn_b(:,:)
