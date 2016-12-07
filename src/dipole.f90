@@ -14,7 +14,7 @@ subroutine dipole(dipole_m,norm_m)
   dipole_m = 0d0; norm_m = 0d0
   do ix = 0,Nx
      dipole_m = dipole_m + xn(ix)*abs(zwfn_e(ix))**2
-     dipole_m = dipole_m + abs(zwfn_e(ix))**2
+     norm_m = norm_m + abs(zwfn_e(ix))**2
   end do
   dipole_m = dipole_m*dx
   norm_m = norm_m*dx
