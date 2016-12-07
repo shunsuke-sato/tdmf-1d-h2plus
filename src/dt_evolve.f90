@@ -59,5 +59,6 @@ subroutine dt_evolve(it)
   call zwfn_rho
   call mean_field_pot
 
+  dt = dt_t
 
 end subroutine dt_evolve

@@ -11,7 +11,7 @@ subroutine RT_prop
   integer :: it
 
   call dipole(dipole_m, norm_m)
-
+  dipole_t(0) = dipole_m; norm_t(0) = norm_m
   
 
   do it = 1,Nt_iter
