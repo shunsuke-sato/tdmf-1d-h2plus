@@ -12,15 +12,15 @@ subroutine input
   write(*,'(A)')'===== Input parameter ============================================================='
   write(*,'(A)')
 
-  Nx = 400
+  Nx = 200
   length_x = 40d0
-  Nr = 400
+  Nr = 200
   length_R = 10d0
 ! GS
   Ncg = 2400
 ! TD
-  T_calc = 20d0
-  dt = 0.01
+  T_calc = 830d0
+  dt = 0.02
   Nt_iter = aint(T_calc/dt)+1
 
   RT_mode='kick' ! kick or gs
