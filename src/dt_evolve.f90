@@ -10,7 +10,7 @@ subroutine dt_evolve(it)
   integer,intent(in) :: it
   integer,parameter :: Nexp=4
   integer :: iexp 
-  real(8) :: dt_t
+  real(dp) :: dt_t
   complex(zp) :: zfact
 
 ! Use of the (approximated) enforced time-reversal symmetry
