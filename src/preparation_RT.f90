@@ -24,10 +24,16 @@ subroutine preparation_RT
 ! Initial condition
 !  zwfn_e = wfn_e; zwfn_n = wfn_n
 
-! momentum kick
-  zwfn_n = wfn_n
-  do ix = 0,Nx
-    zwfn_e(ix) = exp(zI*kick_mom*xn(ix))*wfn_e(ix)
+!! momentum kick
+!  zwfn_n = wfn_n
+!  do ix = 0,Nx
+!    zwfn_e(ix) = exp(zI*kick_mom*xn(ix))*wfn_e(ix)
+!  end do
+
+! quadrupole distortion for nuclei
+  zwfn_e = wfn_e
+  do iy = 0,NR
+    zwfn_n(iy) = exp(zI*kick_mom*Rn(iy)**2)*wfn_n(iy)
   end do
 
 
