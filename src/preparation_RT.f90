@@ -16,7 +16,7 @@ subroutine preparation_RT
 
   allocate(zwfn(0:Nx,0:NR),zwfn_e(0:Nx), zwfn_n(0:NR))
   allocate(ztwfn_e(0:Nx), ztwfn_n(0:NR), zhwfn_e(0:Nx), zhwfn_n(0:NR))
-  allocate(dipole_t(0:Nt_iter),norm_t(0:Nt_iter))
+  allocate(dipole_t(0:Nt_iter),quadrupole_t(0:Nt_iter),norm_t(0:Nt_iter))
   allocate(v_e_new(0:Nx),v_n_new(0:NR))
   allocate(v_e_old(0:Nx,2),v_n_old(0:NR,2))
 

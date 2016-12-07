@@ -7,18 +7,18 @@
 subroutine RT_prop
   use global_variables
   implicit none
-  real(dp) :: dipole_m,norm_m
+  real(dp) :: dipole_m, quadrupole_m, norm_m
   integer :: it
 
-  call dipole(dipole_m, norm_m)
-  dipole_t(0) = dipole_m; norm_t(0) = norm_m
+  call multipole(dipole_m, quadrupole_m, norm_m)
+  dipole_t(0) = dipole_m; quadrupole_t(0) = quadrupole_m; norm_t(0) = norm_m
   
 
   do it = 1,Nt_iter
     call dt_evolve(it)
-    call dipole(dipole_m, norm_m)
-    dipole_t(it) = dipole_m; norm_t(it) = norm_m
-    write(*,"(A,2x,I4,2e16.6e3)")"it=",it,dipole_m,norm_m
+    call multipole(dipole_m, quadrupole_m, norm_m)
+    dipole_t(it) = dipole_m; quadrupole_t(it) = quadrupole_m; norm_t(it) = norm_m
+    write(*,"(A,2x,I4,2e16.6e3)")"it=",it,dipole_m,quadrupole_m, norm_m
   end do
 
   call write_td_results

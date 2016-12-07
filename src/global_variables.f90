@@ -38,7 +38,7 @@ module global_variables
   complex(zp),allocatable :: zwfn_e(:), zwfn_n(:)
   complex(zp),allocatable :: ztwfn_e(:), ztwfn_n(:), zhwfn_e(:), zhwfn_n(:)
   complex(zp),allocatable :: ztwfn_e_b(:), ztwfn_n_b(:)
-  real(dp),allocatable :: dipole_t(:),norm_t(:)
+  real(dp),allocatable :: dipole_t(:),quadrupole_t(:),norm_t(:)
   real(dp) :: field_max,field_duration,field_omega
   real(dp) :: field_max_eV_per_AA,field_duration_fs,field_omega_eV
   real(dp),allocatable :: field_t(:)
