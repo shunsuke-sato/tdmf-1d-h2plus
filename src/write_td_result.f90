@@ -12,7 +12,8 @@ subroutine write_td_results
 
   open(20,file="td_result.out")
   do it = 0,Nt_iter
-    write(20,"(999e26.16e3)")it*dt,dipole_t(it),quadrupole_t(it),norm_t(it)
+    write(20,"(999e26.16e3)")it*dt,dipole_t(it),dipole_t(it)-dipole_t(0) &
+      ,quadrupole_t(it),quadrupole_t(it)-quadrupole_t(0),norm_t(it)
   end do
   close(20)
 
