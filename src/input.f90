@@ -43,8 +43,9 @@ subroutine input
 
 ! temporary array
   allocate(tmp_wfn(0:Nx,0:NR),tmp_hwfn(0:Nx,0:NR),tmp_wfn_b(-4:Nx+4,-4:NR+4))
-  allocate(ztmp_wfn(0:Nx,0:NR),ztmp_hwfn(0:Nx,0:NR),ztmp_wfn_b(-4:NR+4,-4:NR+4))
+  allocate(ztmp_wfn(0:Nx,0:NR),ztmp_hwfn(0:Nx,0:NR),ztmp_wfn_b(-4:Nx+4,-4:NR+4))
   allocate(twfn_e_b(-4:Nx+4), twfn_n_b(-4:NR+4) )
+  allocate(ztwfn_e_b(-4:Nx+4), ztwfn_n_b(-4:NR+4) )
 
 
   write(*,'(A)')
