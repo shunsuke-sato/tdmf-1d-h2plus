@@ -22,7 +22,15 @@ subroutine preparation_RT
 
 
 ! Initial condition
-  zwfn_e = wfn_e; zwfn_n = wfn_n
+!  zwfn_e = wfn_e; zwfn_n = wfn_n
+
+! momentum kick
+  zwfn_n = wfn_n
+  do ix = 0,Nx
+    zwfn_e(ix) = exp(zI*kick_mom*xn(ix))*wfn_e(ix)
+  end do
+
+
   call zwfn_rho
   call mean_field_pot
   v_e_old(:,1) = v_e(:); v_e_old(:,2) = v_e(:)
